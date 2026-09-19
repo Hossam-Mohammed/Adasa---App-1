@@ -7,6 +7,6 @@ export const serverRoutes: ServerRoute[] = [
   },
   {
     path: '**',
-    renderMode: RenderMode.Prerender, // Prerenders static routes like /home and /about
+    renderMode: RenderMode.Server, // Prerenders static routes like /home and /about
   },
 ];
