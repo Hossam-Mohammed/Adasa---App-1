@@ -1,10 +1,9 @@
 import { Routes } from '@angular/router';
-import { HomeComponent } from './home/home.component.js';
-import { BlogComponent } from './blog/blog.component.js';
-import { AboutComponent } from './about/about.component.js';
-import { NotfoundComponent } from './notfound/notfound.component.js';
-import { ArticleComponent } from './article/article.component.js';
-import { title } from 'node:process';
+import { HomeComponent } from './home/home.component';
+import { BlogComponent } from './blog/blog.component';
+import { AboutComponent } from './about/about.component';
+import { NotfoundComponent } from './notfound/notfound.component';
+import { ArticleComponent } from './article/article.component';
 import { RenderMode } from '@angular/ssr';
 
 export const routes: Routes = [
@@ -13,7 +12,7 @@ export const routes: Routes = [
   {
     path: 'blog',
     component: BlogComponent,
-    title: 'عدسة - عالم التصوير | المدونة ',
+    title: 'عدسة - عالم التصوير | المدونة',
     children: [
       {
         path: 'article',
@@ -26,10 +25,10 @@ export const routes: Routes = [
     component: ArticleComponent,
     title: 'عدسة - عالم التصوير',
   },
-  { path: 'about', component: AboutComponent, title: 'عدسة - عالم التصوير |  من نحن' },
+  { path: 'about', component: AboutComponent, title: 'عدسة - عالم التصوير | من نحن' },
   {
     path: '**',
     component: NotfoundComponent,
-    title: 'عدسة - عالم التصوير |  الصفحة غير موجودة',
+    title: 'عدسة - عالم التصوير | الصفحة غير موجودة',
   },
 ];

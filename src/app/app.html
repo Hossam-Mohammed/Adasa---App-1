@@ -1,3 +1,7 @@
 <nav><app-navbar></app-navbar></nav>
-<section><router-outlet></router-outlet></section>
+@defer (on viewport) {
+  <section><router-outlet></router-outlet></section>
+} @placeholder {
+  <div class="skeleton-loader">Loading featured posts...</div>
+}
 <footer><app-footer></app-footer></footer>
