@@ -191,7 +191,7 @@
     <!-- Pagination Controls -->
     @if (totalPages() > 1) {
       <nav aria-label="Blog pagination" dir="ltr" class="d-flex justify-content-center mt-5">
-        <ul class="pagination gap-2 mb-0">
+        <ul class="pagination gap-2 mb-0 w-100">
           <li class="page-item" [class.disabled]="currentPage() === 1">
             <button class="page-link" (click)="goToPage(currentPage() - 1)">
               <mat-icon>chevron_left</mat-icon>
