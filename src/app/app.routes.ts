@@ -4,6 +4,8 @@ import { BlogComponent } from './blog/blog.component.js';
 import { AboutComponent } from './about/about.component.js';
 import { NotfoundComponent } from './notfound/notfound.component.js';
 import { ArticleComponent } from './article/article.component.js';
+import { title } from 'node:process';
+import { RenderMode } from '@angular/ssr';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -19,7 +21,15 @@ export const routes: Routes = [
       },
     ],
   },
-  { path: 'article/:slug', component: ArticleComponent },
+  {
+    path: 'article/:slug',
+    component: ArticleComponent,
+    title: 'عدسة - عالم التصوير',
+  },
   { path: 'about', component: AboutComponent, title: 'عدسة - عالم التصوير |  من نحن' },
-  { path: '**', component: NotfoundComponent, title: 'عدسة - عالم التصوير |  الصفحة غير موجودة' },
+  {
+    path: '**',
+    component: NotfoundComponent,
+    title: 'عدسة - عالم التصوير |  الصفحة غير موجودة',
+  },
 ];
