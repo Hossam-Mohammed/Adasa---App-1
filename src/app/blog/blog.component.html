@@ -1,0 +1,216 @@
+<section class="bg-hero-section">
+  <!-- Soft glow highlight elements -->
+  <div class="glow glow-left"></div>
+  <div class="glow glow-right"></div>
+
+  <!-- Content -->
+  <section class="bg-hero-section">
+    <!-- Soft glow highlight elements -->
+    <div class="glow glow-left"></div>
+    <div class="glow glow-right"></div>
+
+    <!-- Content -->
+    <div class="content">
+      <!-- Hero content -->
+      <!-- Heading Label -->
+      <div class="live-badge d-flex justify-content-center mx-auto my-5">
+        <span class="static"></span>
+        <span class="puls"></span>
+        <span>مدونتنا</span>
+      </div>
+      <!-- Heading -->
+      <div class="mx-auto text-center">
+        <h1 class="heading">استكشف <span class="heading-highlight text-danger">مقالاتنا</span></h1>
+        <p>اكتشف الدروس والرؤى وأفضل الممارسات للتطوير الحديث</p>
+      </div>
+    </div>
+  </section>
+</section>
+
+<!-- second navbar -->
+<div class="blog-wrapper py-4" dir="ltr">
+  <div class="container">
+    <!-- Filter & Search Bar Header -->
+    <div
+      class="filter-header d-flex flex-column-reverse flex-md-row align-items-center justify-content-between gap-3 mb-4"
+    >
+      <!-- Category Pill Tabs -->
+      <div class="categories-list d-flex align-items-center gap-2 flex-wrap">
+        <button
+          class="cat-chip"
+          [class.active]="selectedCategory() === 'جميع المقالات'"
+          (click)="setCategory('جميع المقالات')"
+        >
+          جميع المقالات
+        </button>
+        @for (cat of category; track cat.name) {
+          <button
+            class="cat-chip"
+            [class.active]="selectedCategory() === cat.name"
+            (click)="setCategory(cat.name)"
+          >
+            {{ cat.name }}
+          </button>
+        }
+      </div>
+
+      <!-- Search Field -->
+      <div class="search-input-wrapper position-relative w-25 w-md-auto">
+        <mat-icon class="search-icon">search</mat-icon>
+        <input
+          type="text"
+          class="form-control text-white"
+          placeholder="ابحث في المقالات..."
+          [value]="searchQuery()"
+          (input)="onSearchChange($event)"
+        />
+      </div>
+    </div>
+
+    <!-- View Switcher & Articles Counter Bar -->
+    <div class="view-control-bar d-flex align-items-center justify-content-between mb-4">
+      <div class="view-toggle-container p-1 rounded-3 d-flex align-items-center gap-1">
+        <button
+          class="toggle-btn"
+          [class.active]="viewMode() === 'list'"
+          (click)="setViewMode('list')"
+          title="عرض القائمة"
+        >
+          <mat-icon>menu</mat-icon>
+        </button>
+        <button
+          class="toggle-btn"
+          [class.active]="viewMode() === 'grid'"
+          (click)="setViewMode('grid')"
+          title="عرض الشبكة"
+        >
+          <mat-icon>grid_view</mat-icon>
+        </button>
+      </div>
+
+      <div class="articles-count text-white-50 small">
+        عرض <span class="text-white fw-bold">{{ filteredArticles().length }}</span> مقالات
+      </div>
+    </div>
+
+    <!-- Articles Items Container -->
+    <div class="row g-4 mb-5">
+      @for (post of paginatedArticles(); track post.id) {
+        <div [class]="viewMode() === 'grid' ? 'col-12 col-md-6 col-lg-4' : 'col-12'">
+          <!-- Card Container -->
+          <div
+            [routerLink]="['/article', post.slug]"
+            class="blog-card rounded-4 overflow-hidden d-flex"
+            [class.list-layout]="viewMode() === 'list'"
+            [class.grid-layout]="viewMode() === 'grid'"
+          >
+            <!-- Card Content Body -->
+            <div class="card-content-area p-4 d-flex flex-column justify-content-between">
+              <div>
+                <!-- Category & Read Stats -->
+                <div class="meta-header d-flex align-items-center gap-2 mb-3">
+                  <span class="badge category-badge">{{ post.category }}</span>
+                  <span class="text-white-50 small d-flex align-items-center gap-1">
+                    <mat-icon class="icon-sm">schedule</mat-icon>
+                    {{ post.readTime }}
+                  </span>
+                  <span class="text-white-50 small">•</span>
+                  <span class="text-white-50 small d-flex align-items-center gap-1">
+                    <mat-icon class="icon-sm">calendar_today</mat-icon>
+                    {{ post.date }}
+                  </span>
+                </div>
+
+                <!-- Post Title & Excerpt -->
+                <h3 class="post-title text-white h5 fw-bold mb-2">{{ post.title }}</h3>
+                <p class="post-excerpt text-white-50 small mb-4">{{ post.excerpt }}</p>
+              </div>
+
+              <!-- Author Info & Read Button -->
+              <div class="card-footer-area d-flex align-items-center justify-content-between">
+                <!-- For List Layout: Read Article Link -->
+                @if (viewMode() === 'list') {
+                  <a
+                    [routerLink]="['/article', post.slug]"
+                    class="read-more-link d-flex align-items-center gap-1 text-decoration-none"
+                  >
+                    اقرأ المقال
+                    <mat-icon class="arrow-icon">west</mat-icon>
+                  </a>
+                }
+
+                <!-- For Grid Layout: Circle Arrow Button -->
+                @if (viewMode() === 'grid') {
+                  <a
+                    [routerLink]="['/article', post.slug]"
+                    class="circle-arrow-btn d-flex align-items-center justify-content-center text-decoration-none"
+                  >
+                    <mat-icon>west</mat-icon>
+                  </a>
+                }
+
+                <div class="author-details d-flex align-items-center gap-2 ms-auto">
+                  <img
+                    [src]="post.author.avatar"
+                    [alt]="post.author.name"
+                    class="author-avatar rounded-circle"
+                  />
+                  <div class="text-end">
+                    <h6 class="text-white mb-0 small fw-bold">{{ post.author.name }}</h6>
+                    <span class="text-white-50 xsmall">{{ post.author.role }}</span>
+                  </div>
+                </div>
+
+                @if (viewMode() === 'grid') {
+                  <a
+                    [routerLink]="'/article/' + post.slug"
+                    class="circle-arrow-btn d-flex align-items-center justify-content-center text-decoration-none"
+                  >
+                    <mat-icon>west</mat-icon>
+                  </a>
+                }
+              </div>
+            </div>
+
+            <!-- Card Thumbnail Image -->
+            <div class="card-image-area position-relative">
+              <img [src]="post.image" [alt]="post.title" class="w-100 h-100 object-fit-cover" />
+              @if (viewMode() === 'grid') {
+                <span class="badge category-badge position-absolute top-0 start-0 m-3">{{
+                  post.category
+                }}</span>
+              }
+            </div>
+          </div>
+        </div>
+      } @empty {
+        <div class="col-12 text-center text-white-50 py-5">لا توجد مقالات مطابقة لبحثك.</div>
+      }
+    </div>
+
+    <!-- Pagination Controls -->
+    @if (totalPages() > 1) {
+      <nav aria-label="Blog pagination" dir="ltr" class="d-flex justify-content-center mt-5">
+        <ul class="pagination gap-2 mb-0">
+          <li class="page-item" [class.disabled]="currentPage() === 1">
+            <button class="page-link" (click)="goToPage(currentPage() - 1)">
+              <mat-icon>chevron_left</mat-icon>
+            </button>
+          </li>
+
+          @for (page of pagesArray(); track page) {
+            <li class="page-item" [class.active]="currentPage() === page">
+              <button class="page-link" (click)="goToPage(page)">{{ page }}</button>
+            </li>
+          }
+
+          <li class="page-item" [class.disabled]="currentPage() === totalPages()">
+            <button class="page-link" (click)="goToPage(currentPage() + 1)">
+              <mat-icon>chevron_right</mat-icon>
+            </button>
+          </li>
+        </ul>
+      </nav>
+    }
+  </div>
+</div>

@@ -1,0 +1,370 @@
+<section class="bg-hero-section">
+  <!-- Soft glow highlight elements -->
+  <div class="glow glow-left"></div>
+  <div class="glow glow-right"></div>
+
+  <!-- Content -->
+  <div class="content">
+    <!-- Hero content -->
+    <!-- Heading Label -->
+    <div class="live-badge d-flex justify-content-between mx-auto my-5">
+      <span class="static"></span>
+      <span class="puls"></span>
+      <span>مرحباً بك في عدسة</span>
+    </div>
+    <!-- Heading -->
+    <div class="mx-auto text-center">
+      <h1 class="heading">
+        اكتشف <span class="heading-highlight text-danger">فن</span> <br />التصوير الفوتوغرافي
+      </h1>
+      <div class="actions mt-5 d-lg-flex justify-content-center gap-5">
+        <button class="btn my-2 btn-nav my-sm-0 link-active py-2 px-4">
+          استكشف المقالات
+          <svg
+            class="arrow-icon"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <!-- Line (tail pointing left) -->
+            <line class="arrow-line" x1="19" y1="12" x2="9" y2="12"></line>
+            <!-- Left-pointing Arrowhead -->
+            <polyline class="arrow-head" points="12 19 5 12 12 5"></polyline>
+          </svg>
+        </button>
+        <button
+          class="btn text-center search-icon border border-secondary rounded-pill text-white second rounded-pill py-2 px-4"
+        >
+          <div class="d-flex justify-content-center gap-2 text-white">
+            <mat-icon>schedule</mat-icon>
+            <span>اعرف المزيد</span>
+          </div>
+        </button>
+      </div>
+      <!-- Cards Statistics -->
+      <div class="container mt-5">
+        <div class="row">
+          <div class="col-6 col-lg-3 gx-3">
+            <div class="hero-badge p-5 rounded-4 d-flex flex-column mb-3">
+              <span><mat-icon>newspaper</mat-icon></span
+              ><span>+50</span><span class="text-white">مقالة</span>
+            </div>
+          </div>
+          <div class="col-6 col-lg-3">
+            <div class="hero-badge p-5 rounded-4 d-flex flex-column mb-3">
+              <span><mat-icon>groups</mat-icon></span
+              ><span>+10ألف</span><span class="text-white">قارئ</span>
+            </div>
+          </div>
+          <div class="col-6 col-lg-3">
+            <div class="hero-badge p-5 rounded-4 d-flex flex-column mb-3">
+              <span><mat-icon>folder</mat-icon></span
+              ><span>4</span><span class="text-white">تصنيفات</span>
+            </div>
+          </div>
+          <div class="col-6 col-lg-3">
+            <div class="hero-badge p-5 rounded-4 d-flex flex-column mb-3">
+              <span><mat-icon>draw</mat-icon></span
+              ><span>6</span><span class="text-white">كاتب</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Most Views Section -->
+<section class="featured-section py-5" dir="rtl">
+  <div class="container">
+    <!-- Section Header -->
+    <div
+      class="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-end mb-4 gap-3"
+    >
+      <div>
+        <div class="pill-badge mb-2 d-inline-flex align-items-center gap-2">
+          <span class="orange-dot"></span>
+          <span>مميز</span>
+        </div>
+        <h2 class="section-title text-white mb-1">مقالات مختارة</h2>
+        <p class="section-subtitle mb-0">محتوى منتقى لبدء رحلة تعلمك</p>
+      </div>
+
+      <!-- Action Button -->
+      <a
+        routerLink="/blog"
+        class="btn btn-orange-pill text-decoration-none d-inline-flex align-items-center gap-2"
+      >
+        <span>عرض الكل</span>
+        <span class="material-icons-outlined chevron-icon"
+          ><mat-icon class="mat-18">arrow_back</mat-icon></span
+        >
+      </a>
+    </div>
+
+    <!-- Featured Card -->
+    @for (p of post; track p.id) {
+      @if (p.id > 4 && p.id <= 7) {
+        <div class="featured-card overflow-hidden mb-5">
+          <div class="row g-0 flex-column-reverse flex-lg-row">
+            <!-- Content Column -->
+
+            <div
+              class="col-12 col-lg-6 p-4 p-md-5 d-flex flex-column justify-content-between"
+              [routerLink]="['/article', p.slug]"
+            >
+              <div>
+                <!-- Meta Bar -->
+                <div class="d-flex align-items-center gap-2 mb-3">
+                  <span class="category-tag">{{ p.category }}</span>
+                  <span class="meta-time d-flex align-items-center gap-1">
+                    <mat-icon class="time-icon">schedule</mat-icon>
+                    {{ p.readTime }}
+                  </span>
+                </div>
+
+                <!-- Title & Excerpt -->
+                <h3 class="featured-title text-white mb-3">{{ p.title }}</h3>
+                <p class="featured-excerpt mb-4">{{ p.slug }}</p>
+              </div>
+
+              <!-- Footer Info -->
+              <div
+                [routerLink]="['/article', p.slug]"
+                class="d-flex align-items-center justify-content-between pt-3 border-top border-secondary border-opacity-10 mt-4"
+              >
+                <a
+                  [routerLink]="['/article', p.slug]"
+                  class="read-link text-decoration-none d-inline-flex align-items-center gap-2"
+                >
+                  <span>اقرأ المقال</span>
+                  <span class="arrow-symbol">←</span>
+                </a>
+
+                <div class="author-profile d-flex align-items-center gap-2">
+                  <div class="text-end">
+                    <h4 class="author-name text-white mb-0">{{ p.author.name }}</h4>
+                    <span class="author-date"> {{ p.date }} </span>
+                  </div>
+                  <div class="avatar-container position-relative">
+                    <img [src]="p.author.avatar" [alt]="p.author.name" class="author-avatar" />
+                    <span class="online-indicator"></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Image Column -->
+            <div class="col-12 col-lg-6 position-relative image-col">
+              <img [src]="p.image" alt="الساعة الذهبية" class="featured-img" />
+
+              <!-- Star Badge Overlay -->
+              <div class="featured-star-badge position-absolute d-flex align-items-center gap-1">
+                <span>★</span>
+                <span>مميز</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      }
+    }
+  </div>
+</section>
+
+<!-- Categories Section -->
+<section class="categories-section py-5" dir="rtl">
+  <div class="container">
+    <!-- Section Header -->
+    <div class="text-center mb-5">
+      <div class="pill-badge mb-3 d-inline-flex align-items-center gap-2">
+        <span class="orange-dot"></span>
+        <span>التصنيفات</span>
+      </div>
+      <h2 class="section-title text-white mb-2">استكشف حسب الموضوع</h2>
+      <p class="section-subtitle mb-0">اعثر على محتوى مصمم حسب اهتماماتك</p>
+    </div>
+
+    <!-- Grid Layout -->
+    <div class="row g-4 justify-content-center">
+      @for (cat of category; track $index) {
+        <div routerLink="/blog" class="col-6 col-md-4 col-lg-2-4">
+          <div
+            class="category-card p-4 d-flex flex-column align-items-center justify-content-center position-relative"
+          >
+            <!-- Category Icon -->
+            <div class="icon-wrapper mb-3 d-flex align-items-center justify-content-center">
+              <span class="material-icons-outlined cat-icon"
+                ><mat-icon class="mat-18">{{ cat.icon }}</mat-icon></span
+              >
+            </div>
+
+            <!-- Title & Count -->
+            <h3 class="category-name text-white mb-1">{{ cat.name }}</h3>
+            <span class="category-count">{{ cat.count }} مقالة</span>
+
+            <!-- Arrow Indicator (Shown when active or on hover) -->
+            <div
+              class="arrow-badge position-absolute d-flex align-items-center justify-content-center"
+            >
+              <span class="material-icons-outlined"
+                ><mat-icon class="mat-18">arrow_back</mat-icon></span
+              >
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- Recently add Section -->
+<section class="latest-articles-section py-5" dir="rtl">
+  <div class="container">
+    <!-- Section Header -->
+    <div
+      class="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-end mb-4 gap-3"
+    >
+      <div>
+        <div class="pill-badge mb-2 d-inline-flex align-items-center gap-2">
+          <span class="orange-dot"></span>
+          <span>الأحدث</span>
+        </div>
+        <h2 class="section-title text-white mb-1">أحدث المقالات</h2>
+        <p class="section-subtitle mb-0">محتوى جديد طازج من المطبعة</p>
+      </div>
+
+      <!-- Action Link with Expanding Arrow -->
+      <a
+        routerLink="/blog"
+        class="view-all-link text-decoration-none d-inline-flex align-items-center gap-2"
+      >
+        <span>عرض جميع المقالات</span>
+        <svg
+          class="arrow-icon"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <line class="arrow-line" x1="19" y1="12" x2="9" y2="12"></line>
+          <polyline class="arrow-head" points="12 19 5 12 12 5"></polyline>
+        </svg>
+      </a>
+    </div>
+    <div class="row g-4">
+      @for (p of post; track p.id) {
+        @if (p.id <= 3) {
+          <!-- Card 1 -->
+          <div [routerLink]="['/article', p.slug]" class="col-12 col-md-6 col-lg-4">
+            <article class="article-card">
+              <div class="card-image-wrapper">
+                <img [src]="p.image" alt="أساسيات إعدادات الكاميرا" class="card-img" />
+                <span class="category-badge">{{ p.category }}</span>
+              </div>
+
+              <div class="card-body-content p-4">
+                <div class="meta-info d-flex align-items-center gap-2 mb-2">
+                  <mat-icon class="meta-icon">schedule</mat-icon>
+                  <span>{{ p.readTime }}</span>
+                  <span class="bullet">•</span>
+                  <span>{{ p.date }}</span>
+                </div>
+
+                <h3 class="article-title text-white mb-2">
+                  {{ p.title }}
+                </h3>
+                <p class="article-excerpt mb-4">
+                  {{ p.excerpt }}
+                </p>
+
+                <div
+                  class="card-footer-info d-flex align-items-center justify-content-between pt-3 border-top border-secondary border-opacity-10"
+                >
+                  <div class="author-info d-flex align-items-center gap-2">
+                    <img [src]="p.author.avatar" [alt]="p.author.name" class="author-avatar" />
+                    <div>
+                      <h4 class="author-name mb-0">{{ p.author.name }}</h4>
+                      <span class="author-role"> {{ p.author.role }}</span>
+                    </div>
+                  </div>
+
+                  <button class="action-btn" aria-label="اقرأ المقال">
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <polyline points="15 18 9 12 15 6"></polyline>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </article>
+          </div>
+        }
+      }
+    </div>
+    <!-- Article Cards Grid -->
+  </div>
+</section>
+
+<!-- Contact Section -->
+<section class="newsletter-section py-5 bg-dark-section" dir="rtl">
+  <div class="container d-flex justify-content-center">
+    <div class="newsletter-card p-4 p-md-5 text-center">
+      <!-- Top Mail Icon -->
+      <div class="mail-icon-wrapper mx-auto mb-4">
+        <mat-icon class="mail-icon">mail</mat-icon>
+      </div>
+
+      <!-- Heading with Gradient Text -->
+      <h2 class="newsletter-title mb-3">
+        اشترك في <span class="highlight-text">نشرتنا الإخبارية</span>
+      </h2>
+
+      <!-- Subtitle -->
+      <p class="newsletter-desc mb-4 mx-auto">
+        احصل على نصائح التصوير الحصرية ودروس جديدة مباشرة في بريدك الإلكتروني
+      </p>
+
+      <!-- Form (Inline on Desktop, Stacked on Mobile) -->
+      <form class="newsletter-form row g-3 justify-content-center mx-auto mb-4">
+        <div class="col-12 col-md-8">
+          <input
+            type="email"
+            class="form-control custom-input h-100 text-end"
+            placeholder="أدخل بريدك الإلكتروني"
+            required
+          />
+        </div>
+        <div class="col-12 col-md-4">
+          <button type="submit" class="btn btn-orange w-100 h-100 py-3">اشترك الآن</button>
+        </div>
+      </form>
+
+      <!-- Social Proof / Avatars Footer -->
+      <div
+        class="newsletter-footer d-flex flex-wrap align-items-center justify-content-center gap-2 gap-sm-3"
+      >
+        <div class="avatar-group d-flex">
+          <img src="https://i.pravatar.cc/100?img=33" alt="مصور" class="avatar" />
+          <img src="https://i.pravatar.cc/100?img=12" alt="مصور" class="avatar" />
+          <img src="https://i.pravatar.cc/100?img=60" alt="مصور" class="avatar" />
+        </div>
+        <span class="proof-text"> انضم لـ <strong class="text-white">+10,000</strong> مصور </span>
+        <span class="dot-separator">•</span>
+        <span class="proof-text">بدون إزعاج</span>
+        <span class="dot-separator">•</span>
+        <span class="proof-text">إلغاء الاشتراك في أي وقت</span>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,398 @@
+.bg-hero-section {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background-color: #0d0d0e; /* Base dark background */
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* Responsive Linear Grid Pattern */
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+
+  /* Size of each grid square (Adjust for mobile with media queries if needed) */
+  background-size: 40px 40px;
+}
+.heading-highlight {
+  background-image: linear-gradient(
+    to right,
+    var(--color-primary),
+    var(--color-primary-light),
+    var(--color-accent)
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.heading {
+  font-size: 4.5rem;
+  color: white;
+}
+
+.live-badge {
+  width: 200px;
+  align-items: center;
+  gap: 8px; /* Spacing between dots and text */
+  padding: 6px 16px;
+  background-color: color-mix(in srgb, var(--color-primary-light) 10%, transparent);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  color: #ffffff;
+  font-size: 0.875rem;
+}
+
+/* 1. First Dot: Solid Static Orange Dot */
+.static {
+  content: '';
+  width: 8px;
+  height: 8px;
+  background-color: #f97316; /* Orange color */
+  border-radius: 50%;
+  display: inline-block;
+}
+
+/* 2. Second Dot: Pulsing Highlight Dot */
+.puls {
+  content: '';
+  width: 8px;
+  height: 8px;
+  background-color: #f97316;
+  border-radius: 50%;
+  display: inline-block;
+  /* Continuous pulse animation */
+  animation: pulse-glow 1.5s infinite ease-in-out;
+}
+
+/* Keyframe Animation for the Glow Pulse Effect */
+@keyframes pulse-glow {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(249, 115, 22, 0.7);
+  }
+
+  70% {
+    transform: scale(1.1);
+    box-shadow: 0 0 0 8px rgba(249, 115, 22, 0); /* Ring expands and fades out */
+  }
+
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(249, 115, 22, 0);
+  }
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+}
+
+.link-active {
+  background-image: linear-gradient(to left, var(--color-primary-dark) 75%, var(--color-primary));
+  border-radius: 999px;
+  color: white !important;
+}
+
+.search-icon {
+  color: var(--link-color);
+}
+
+.search-icon:hover {
+  color: var(--color-primary);
+  border: 2px solid var(--color-border);
+  border-radius: 6px;
+}
+
+.arrow-icon {
+  width: 22px;
+  height: 22px;
+  overflow: visible; /* Prevents long arrow from clipping */
+}
+
+/* Set transform origin to RIGHT so it expands leftward */
+.arrow-line {
+  transform-origin: right center;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Arrowhead transition */
+.arrow-head {
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* HOVER EFFECTS FOR LEFT-POINTING ARROW */
+
+/* 1. Stretch line tail leftward */
+.btn-nav:hover .arrow-line {
+  transform: scaleX(1.35);
+}
+
+/* 2. Push left-pointing arrowhead further left */
+.btn-nav:hover .arrow-head {
+  transform: translateX(-4px);
+}
+
+@media screen and (max-width: 780px) {
+  .actions {
+    display: flex;
+    flex-direction: column;
+    padding: 1.25rem;
+  }
+}
+
+.hero-badge {
+  height: 150px;
+  color: var(--color-primary-light);
+  background-color: color-mix(in srgb, var(--color-dark-card) 50%, transparent);
+}
+
+.hero-badge:hover {
+  transform: scaleX(1.1);
+  transition: 0.5;
+}
+
+.slug {
+  font-size: 1.3rem;
+}
+
+/* taqyeem */
+.values-section {
+  background-color: #0b0b0c;
+}
+
+/* Header Styling */
+.section-title {
+  font-weight: 800;
+  font-size: 2.2rem;
+  letter-spacing: -0.5px;
+}
+
+.orange-pipe {
+  color: #f9570c;
+  font-weight: 900;
+  margin: 0 4px;
+}
+
+.section-subtitle {
+  color: #838996;
+  font-size: 0.95rem;
+}
+
+/* Value Card Styling */
+.value-card {
+  background-color: #121214;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  min-height: 200px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.value-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(249, 87, 12, 0.3);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+  border-color: rgba(249, 87, 12, 0.5);
+  background: radial-gradient(circle at center, rgba(249, 87, 12, 0.12) 0%, #121214 80%);
+  box-shadow: 0 10px 25px rgba(249, 87, 12, 0.15);
+}
+/* Icon Styling */
+.value-icon {
+  font-size: 40px;
+  color: #f9570c;
+}
+
+/* Typography */
+.value-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.value-desc {
+  color: #838996;
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+
+/* contact */
+/* CTA Section Background Gradient */
+.cta-section {
+  background: linear-gradient(135deg, #f9570c 0%, #ff8c00 50%, #ffa500 100%);
+}
+
+/* Typography */
+.cta-title {
+  font-size: 2.25rem;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+.cta-description {
+  max-width: 650px;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+
+/* Base Button Styles */
+.cta-section .btn {
+  border-radius: 12px;
+  padding: 10px 28px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  min-width: 170px;
+  transition: all 0.25s ease-in-out;
+}
+
+/* Mobile full-width adjustments */
+@media (max-width: 575.98px) {
+  .cta-section .btn {
+    width: 100%;
+  }
+}
+
+/* Dark Solid Button */
+.btn-dark-custom {
+  background-color: #0d0d0e;
+  color: #ffffff;
+  border: 1px solid #0d0d0e;
+}
+
+.btn-dark-custom:hover {
+  background-color: #1a1a1c;
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+}
+
+/* Outlined Glass Button */
+.btn-outline-custom {
+  background-color: rgba(255, 255, 255, 0.05);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.btn-outline-custom:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  border-color: #ffffff;
+  transform: translateY(-2px);
+}
+
+/* Icon alignment */
+.btn-icon {
+  font-size: 1.15rem;
+}
+
+/* authers */
+.authors-section {
+  background-color: #0b0b0c;
+}
+
+/* Header Elements */
+.pill-badge {
+  background-color: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(249, 87, 12, 0.25);
+  padding: 4px 16px;
+  border-radius: 50px;
+  color: #f9570c;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.orange-dot {
+  width: 7px;
+  height: 7px;
+  background-color: #f9570c;
+  border-radius: 50%;
+  box-shadow: 0 0 8px #f9570c;
+}
+
+.section-title {
+  font-weight: 800;
+  font-size: 2.2rem;
+  letter-spacing: -0.5px;
+}
+
+.section-subtitle {
+  color: #838996;
+  font-size: 0.95rem;
+}
+
+/* Author Card */
+.author-card {
+  background-color: #121214;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.author-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(249, 87, 12, 0.3);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* Avatar & Verified Badge */
+.avatar-wrapper {
+  width: 100px;
+  height: 100px;
+}
+
+.author-avatar {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.verified-badge {
+  position: absolute;
+  bottom: 2px;
+  right: 2px;
+  width: 22px;
+  height: 22px;
+  background-color: #f9570c;
+  color: #ffffff;
+  border-radius: 50%;
+  font-size: 11px;
+  font-weight: bold;
+  border: 2px solid #121214;
+}
+
+/* Typography */
+.author-name {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.author-role {
+  color: #f9570c;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+/* Social Buttons */
+.social-btn {
+  width: 36px;
+  height: 36px;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  color: #838996;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+}
+
+.social-btn:hover {
+  background-color: rgba(249, 87, 12, 0.15);
+  border-color: #f9570c;
+  color: #f9570c;
+  transform: translateY(-2px);
+}

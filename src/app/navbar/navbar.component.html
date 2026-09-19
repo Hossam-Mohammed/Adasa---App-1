@@ -1,0 +1,53 @@
+<div class="bg-navbar fixed-top">
+  <div class="w-nav mx-auto">
+    <nav class="navbar navbar-expand-sm">
+      <a class="navbar-brand text-white" routerLink="/home">
+        <div class="d-flex align-items-center gap-3">
+          <img class="w-logo" src="./images/logo-GdqARQRt.png" alt="Lens Image Logo" />
+          <div class="d-flex flex-column">
+            <span class="title">{{ siteInfos.name }}</span>
+            <span class="d-none d-lg-inline-block subtitle">{{ siteInfos.tagline }}</span>
+          </div>
+        </div>
+      </a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#collapsibleNavId"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="collapsibleNavId">
+        <ul
+          class="navbar-nav mx-auto me-auto mt-2 mt-lg-0 border rounded-pill border-secondary p-2 gap-3"
+        >
+          <li class="nav-item">
+            <a class="nav-link link px-3" routerLink="/home" routerLinkActive="link-active"
+              >الرئيسية</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link link px-3" routerLink="/blog" routerLinkActive="link-active"
+              >المدونة</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link link px-3" routerLink="/about" routerLinkActive="link-active"
+              >من نحن</a
+            >
+          </li>
+        </ul>
+        <div class="d-flex align-items-center m-lg-3 btn-nav">
+          <span class="d-none d-lg-inline-block search-icon p-1"><mat-icon>search</mat-icon></span>
+          <button class="btn my-2 btn-nav my-sm-0 link-active py-2 px-4" routerLink="/blog">
+            ابدأ القراءة
+          </button>
+        </div>
+      </div>
+    </nav>
+  </div>
+</div>

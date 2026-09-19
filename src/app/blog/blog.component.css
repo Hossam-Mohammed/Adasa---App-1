@@ -1,0 +1,333 @@
+.bg-hero-section {
+  position: relative;
+  width: 100%;
+  min-height: 50vh;
+  background-color: #0d0d0e; /* Base dark background */
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* Responsive Linear Grid Pattern */
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+
+  /* Size of each grid square (Adjust for mobile with media queries if needed) */
+  background-size: 40px 40px;
+}
+.heading-highlight {
+  background-image: linear-gradient(
+    to right,
+    var(--color-primary),
+    var(--color-primary-light),
+    var(--color-accent)
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.heading {
+  font-size: 4.5rem;
+  color: white;
+}
+
+.live-badge {
+  width: 150px;
+  align-items: center;
+  gap: 8px; /* Spacing between dots and text */
+  padding: 6px 16px;
+  background-color: color-mix(in srgb, var(--color-primary-light) 10%, transparent);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  color: #ffffff;
+  font-size: 0.875rem;
+}
+
+/* 1. First Dot: Solid Static Orange Dot */
+.static {
+  content: '';
+  width: 8px;
+  height: 8px;
+  background-color: #f97316; /* Orange color */
+  border-radius: 50%;
+  display: inline-block;
+}
+
+/* 2. Second Dot: Pulsing Highlight Dot */
+.puls {
+  content: '';
+  width: 8px;
+  height: 8px;
+  background-color: #f97316;
+  border-radius: 50%;
+  display: inline-block;
+  /* Continuous pulse animation */
+  animation: pulse-glow 1.5s infinite ease-in-out;
+}
+
+/* Keyframe Animation for the Glow Pulse Effect */
+@keyframes pulse-glow {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(249, 115, 22, 0.7);
+  }
+
+  70% {
+    transform: scale(1.1);
+    box-shadow: 0 0 0 8px rgba(249, 115, 22, 0); /* Ring expands and fades out */
+  }
+
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(249, 115, 22, 0);
+  }
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+}
+
+.link-active {
+  background-image: linear-gradient(to left, var(--color-primary-dark) 75%, var(--color-primary));
+  border-radius: 999px;
+  color: white !important;
+}
+
+.search-icon {
+  color: var(--link-color);
+}
+
+.search-icon:hover {
+  color: var(--color-primary);
+  border: 2px solid var(--color-border);
+  border-radius: 6px;
+}
+
+.bg-hero-section {
+  height: 50vh !important;
+}
+
+/* seconde navbar */
+/* Base Layout Colors */
+.blog-wrapper {
+  background-color: #0d0d0f;
+  color: #ffffff;
+  min-height: 100vh;
+}
+
+/* Category Pills */
+.cat-chip {
+  background-color: #17171a;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #8f94a0;
+  padding: 8px 18px;
+  border-radius: 12px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.cat-chip:hover {
+  background-color: #222226;
+  color: #ffffff;
+}
+
+.cat-chip.active {
+  background-color: #ff5500;
+  border-color: #ff5500;
+  color: #ffffff;
+}
+
+/* Search Bar Input */
+.search-input-wrapper {
+  min-width: 280px;
+}
+
+.search-input-wrapper input {
+  background-color: #17171a;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 10px 42px 10px 16px;
+  font-size: 0.9rem;
+}
+
+.search-input-wrapper input:focus {
+  border-color: #ff5500;
+  box-shadow: none;
+}
+
+.search-input-wrapper .search-icon {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #8f94a0;
+  font-size: 20px;
+  width: 20px;
+  height: 20px;
+}
+
+/* View Switcher Controls */
+.view-toggle-container {
+  background-color: #17171a;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.toggle-btn {
+  background: transparent;
+  border: none;
+  color: #8f94a0;
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.toggle-btn.active {
+  background-color: #ff5500;
+  color: #ffffff;
+}
+
+/* Blog Card Base */
+.blog-card {
+  background-color: #141416;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.blog-card:hover {
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+/* List Layout Card Settings */
+.blog-card.list-layout {
+  flex-direction: row;
+  min-height: 220px;
+}
+
+.blog-card.list-layout .card-content-area {
+  width: 65%;
+}
+
+.blog-card.list-layout .card-image-area {
+  width: 35%;
+  min-height: 100%;
+}
+
+/* Grid Layout Card Settings */
+.blog-card.grid-layout {
+  flex-direction: column-reverse;
+}
+
+.blog-card.grid-layout .card-content-area {
+  width: 100%;
+}
+
+.blog-card.grid-layout .card-image-area {
+  width: 100%;
+  height: 210px;
+}
+
+/* Typography & Details */
+.category-badge {
+  background-color: #ff5500;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 0.75rem;
+  padding: 5px 10px;
+  border-radius: 6px;
+}
+
+.icon-sm {
+  font-size: 16px;
+  width: 16px;
+  height: 16px;
+}
+
+.author-avatar {
+  width: 38px;
+  height: 38px;
+  object-fit: cover;
+}
+
+.xsmall {
+  font-size: 0.75rem;
+}
+
+/* Card Buttons */
+.read-more-link {
+  color: #ff5500;
+  font-weight: 700;
+  font-size: 0.9rem;
+  transition: gap 0.2s ease;
+}
+
+.read-more-link:hover {
+  color: #ff7733;
+}
+
+.arrow-icon {
+  font-size: 18px;
+  width: 18px;
+  height: 18px;
+}
+
+.circle-arrow-btn {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.05);
+  color: #ff5500;
+  transition: background-color 0.2s ease;
+}
+
+.circle-arrow-btn:hover {
+  background-color: #ff5500;
+  color: #ffffff;
+}
+
+/* Pagination Dark Styling */
+.pagination .page-link {
+  background-color: #17171a;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #8f94a0;
+  border-radius: 8px;
+  padding: 6px 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pagination .page-item.active .page-link {
+  background-color: #ff5500;
+  border-color: #ff5500;
+  color: #ffffff;
+}
+
+.pagination .page-item.disabled .page-link {
+  background-color: #101012;
+  color: rgba(255, 255, 255, 0.2);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 767.98px) {
+  .blog-card.list-layout {
+    flex-direction: column-reverse;
+  }
+  .blog-card.list-layout .card-content-area,
+  .blog-card.list-layout .card-image-area {
+    width: 100% !important;
+  }
+  .blog-card.list-layout .card-image-area {
+    height: 200px;
+  }
+}

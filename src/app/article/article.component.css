@@ -1,0 +1,531 @@
+.bg-hero-section {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background-color: #0d0d0e; /* Base dark background */
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* Responsive Linear Grid Pattern */
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+
+  /* Size of each grid square (Adjust for mobile with media queries if needed) */
+  background-size: 40px 40px;
+}
+
+.related-section {
+  background-color: #0d0d0f;
+}
+
+/* Header Styles */
+.header-icon-box {
+  width: 42px;
+  height: 42px;
+  background-color: rgba(255, 85, 0, 0.12);
+  border: 1px solid rgba(255, 85, 0, 0.25);
+}
+
+.text-orange {
+  color: #ff5500;
+}
+
+.view-all-link {
+  color: #ff5500;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: opacity 0.2s ease;
+}
+
+.view-all-link:hover {
+  color: #ff7733;
+}
+
+.arrow-icon {
+  font-size: 18px;
+  width: 18px;
+  height: 18px;
+}
+
+/* Card Container */
+.related-card {
+  height: 260px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  cursor: pointer;
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.related-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(255, 85, 0, 0.5);
+}
+
+/* Image & Gradient */
+.card-bg-img {
+  transition: transform 0.4s ease;
+  z-index: 0;
+}
+
+.related-card:hover .card-bg-img {
+  transform: scale(1.05);
+}
+
+.card-gradient-overlay {
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.2) 0%,
+    rgba(0, 0, 0, 0.6) 50%,
+    rgba(10, 10, 12, 0.95) 100%
+  );
+  z-index: 0;
+}
+
+/* Badge */
+.category-badge {
+  background-color: #ff5500;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 0.75rem;
+  padding: 5px 12px;
+  border-radius: 6px;
+}
+
+/* Typography & Author */
+.post-title {
+  line-height: 1.5;
+}
+
+.author-avatar {
+  width: 24px;
+  height: 24px;
+  object-fit: cover;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.read-time {
+  font-size: 0.8rem;
+}
+
+.article-page {
+  background-color: #0b0b0e;
+  min-height: 100vh;
+}
+
+/* Colors & Badges */
+.text-orange {
+  color: #ff5500 !important;
+}
+
+.bg-orange {
+  background-color: #ff5500 !important;
+}
+
+.btn-orange {
+  background-color: #ff5500;
+  color: #ffffff;
+  border: none;
+  transition: background-color 0.2s ease;
+}
+
+.btn-orange:hover {
+  background-color: #ff661a;
+  color: #ffffff;
+}
+
+.category-badge {
+  background-color: #ff5500;
+  color: #ffffff;
+  font-weight: 600;
+  border-radius: 6px;
+}
+
+.category-crumb {
+  background-color: rgba(255, 85, 0, 0.2);
+  color: #ff5500;
+}
+
+.extra-small {
+  font-size: 0.75rem;
+}
+
+/* Hero Section */
+.hero-section {
+  min-height: 480px;
+  background-color: #121216;
+}
+
+.hero-overlay {
+  background: linear-gradient(
+    180deg,
+    rgba(11, 11, 14, 0.4) 0%,
+    rgba(11, 11, 14, 0.85) 70%,
+    #0b0b0e 100%
+  );
+}
+
+.hero-title {
+  font-size: 2.2rem;
+  line-height: 1.4;
+  max-width: 900px;
+}
+
+.hero-author-box {
+  background-color: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.author-hero-avatar {
+  width: 44px;
+  height: 44px;
+  object-fit: cover;
+}
+
+.chevron-icon {
+  font-size: 16px;
+  width: 16px;
+  height: 16px;
+}
+
+.meta-icon {
+  font-size: 16px;
+  width: 16px;
+  height: 16px;
+}
+
+/* Sidebar & Cards */
+.sticky-sidebar {
+  position: sticky;
+  top: 90px;
+}
+
+.sidebar-card {
+  background-color: #131318;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.toc-icon-box {
+  width: 34px;
+  height: 34px;
+  background-color: rgba(255, 85, 0, 0.12);
+}
+
+.toc-btn {
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+  font-size: 0.9rem;
+}
+
+.toc-btn:hover {
+  background-color: rgba(255, 255, 255, 0.05) !important;
+  color: #ffffff !important;
+}
+
+.toc-number {
+  font-size: 0.75rem;
+  width: 20px;
+  height: 20px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.newsletter-card {
+  background: linear-gradient(180deg, rgba(255, 85, 0, 0.08) 0%, #131318 100%);
+  border: 1px solid rgba(255, 85, 0, 0.2);
+}
+
+.newsletter-icon-box {
+  width: 50px;
+  height: 50px;
+  background-color: rgba(255, 85, 0, 0.15);
+}
+
+/* Quote Banner */
+.quote-banner {
+  background-color: #161210;
+  border-right: 4px solid #ff5500;
+  border-top: 1px solid rgba(255, 85, 0, 0.15);
+  border-bottom: 1px solid rgba(255, 85, 0, 0.15);
+  border-left: 1px solid rgba(255, 85, 0, 0.15);
+}
+
+/* Tags & Share */
+.tag-badge {
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  font-weight: 500;
+}
+
+.share-btn {
+  width: 38px;
+  height: 38px;
+  background-color: rgba(255, 255, 255, 0.06);
+  transition: background-color 0.2s ease;
+  font-size: 0.85rem;
+  font-weight: bold;
+}
+
+.share-btn:hover {
+  background-color: #ff5500;
+}
+
+.author-large-avatar {
+  width: 90px;
+  height: 90px;
+  object-fit: cover;
+  border: 2px solid rgba(255, 85, 0, 0.3);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 1.5rem;
+  }
+}
+
+/* Main Page Layout */
+.article-page {
+  background-color: var(--color-dark);
+}
+
+/* Hero Section */
+.hero-section {
+  min-height: 480px;
+  background-color: var(--color-dark-secondary);
+}
+
+.hero-overlay {
+  background: linear-gradient(to bottom, rgba(10, 10, 10, 0.4) 0%, var(--color-dark) 100%);
+}
+
+.category-badge,
+.category-crumb {
+  background-color: var(--color-primary) !important;
+  color: #ffffff !important;
+}
+
+/* Sticky Sidebar */
+.sticky-sidebar {
+  position: sticky;
+  top: 90px;
+}
+
+.sidebar-card {
+  background-color: var(--color-dark-card) !important;
+  border-color: var(--color-border) !important;
+}
+
+/* Table of Contents & Interactive Elements */
+.toc-btn {
+  transition: all 0.2s ease-in-out;
+}
+
+.toc-btn:hover {
+  background-color: var(--color-dark-tertiary) !important;
+  color: var(--color-primary-light) !important;
+}
+
+.toc-icon-box {
+  background-color: rgba(249, 115, 22, 0.15) !important;
+}
+
+/* Highlight Quote Box */
+.quote-banner {
+  background-color: var(--color-dark-card) !important;
+  border-right: 4px solid var(--color-primary) !important;
+  border-left: none !important;
+}
+
+.quote-banner p {
+  color: var(--color-primary-light) !important;
+}
+
+/* Content Formatting */
+.style-content {
+  color: #d1d5db;
+  line-height: 1.8;
+  font-size: 1.05rem;
+}
+
+/* Tags Styling */
+.tag-badge {
+  background-color: var(--color-dark-tertiary) !important;
+  border: 1px solid var(--color-border);
+  color: var(--link-color) !important;
+  transition: all 0.2s ease;
+}
+
+.tag-badge:hover {
+  background-color: rgba(249, 115, 22, 0.2) !important;
+  color: var(--color-primary-light) !important;
+  border-color: var(--color-primary);
+}
+
+/* Author Section Avatar */
+.author-large-avatar {
+  object-fit: cover;
+  border: 2px solid var(--color-primary);
+}
+
+/* Related Cards Section */
+.related-section {
+  background-color: var(--color-dark-secondary);
+  border-top: 1px solid var(--color-border);
+}
+
+.related-card {
+  background-color: var(--color-dark-card);
+  border-color: var(--color-border) !important;
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.related-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--color-primary) !important;
+}
+
+/* Sidebar Layout */
+.sticky-sidebar {
+  position: sticky;
+  top: 90px;
+}
+
+.sidebar-card {
+  background-color: var(--color-dark-card);
+  border: 1px solid var(--color-border);
+}
+
+/* 1. Table of Contents Styling */
+.toc-icon-box {
+  background-color: rgba(249, 115, 22, 0.15);
+  border: 1px solid rgba(249, 115, 22, 0.3);
+}
+
+.text-orange {
+  color: var(--color-primary) !important;
+}
+
+.toc-btn {
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.toc-btn:hover {
+  background-color: var(--color-dark-tertiary) !important;
+}
+
+.toc-btn:hover .toc-title {
+  color: #ffffff !important;
+}
+
+.toc-number {
+  background-color: var(--color-dark-tertiary);
+  color: var(--link-color);
+  min-width: 24px;
+  text-align: center;
+}
+
+/* 2. Reading Time & Date Cards Styling */
+.meta-inner-box {
+  background-color: var(--color-dark-secondary);
+  border: 1px solid var(--color-border);
+}
+
+.extra-small {
+  font-size: 0.75rem;
+}
+
+/* 3. Newsletter Card Styling */
+.newsletter-card {
+  background: radial-gradient(circle at top, rgba(249, 115, 22, 0.12), var(--color-dark-card));
+  border-color: rgba(249, 115, 22, 0.3);
+}
+
+.newsletter-icon-box {
+  width: 48px;
+  height: 48px;
+  background-color: var(--color-primary);
+}
+
+.btn-orange {
+  background-color: var(--color-primary);
+  border: none;
+  transition: background-color 0.2s ease;
+}
+
+.btn-orange:hover {
+  background-color: var(--color-primary-dark);
+}
+
+/* Section Header Layout */
+.section-header {
+  direction: rtl;
+}
+
+/* Orange Icon Outer Box */
+.header-icon-box {
+  background-color: rgba(249, 115, 22, 0.12);
+  border: 1px solid rgba(249, 115, 22, 0.4);
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+}
+
+.text-orange {
+  color: var(--color-primary) !important;
+}
+
+/* Typography Adjustments */
+.section-title {
+  letter-spacing: -0.2px;
+}
+
+.section-body {
+  color: #a3a3a3 !important;
+  line-height: 1.85;
+}
+
+/* Container for article body */
+.article-body h2,
+.article-body h3 {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 1.4rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+/* Static Orange Camera Badge generated purely via CSS */
+
+.article-body p {
+  color: #a3a3a3;
+  line-height: 1.85;
+  font-size: 1.05rem;
+  margin-bottom: 1.5rem;
+}
+
+.icon-badge {
+  width: 40px;
+  height: 40px;
+  background-color: rgba(249, 115, 22, 0.12);
+  border: 1.5px solid var(--color-primary, #f97316);
+  flex-shrink: 0;
+}
+
+.text-orange {
+  color: var(--color-primary, #f97316) !important;
+}

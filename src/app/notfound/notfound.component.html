@@ -1,0 +1,68 @@
+<section class="bg-hero-section overflow-hidden">
+  <!-- Soft glow highlight elements -->
+  <div class="glow glow-left"></div>
+  <div class="glow glow-right"></div>
+
+  <!-- Content -->
+  <div class="content">
+    <div class="text-center position-relative">
+      <!-- Big 404 Title -->
+      <h1 class="error-code mb-0">404</h1>
+
+      <!-- Sad Face Circle with Orbiting Dots -->
+      <div class="icon-circle-wrapper my-4 mx-auto position-relative">
+        <div class="icon-circle d-flex align-items-center justify-content-center">
+          <span class="material-icons-outlined sad-icon"
+            ><mat-icon class="mat-18">tag_faces</mat-icon></span
+          >
+        </div>
+        <span class="orbit-dot dot-top puls"></span>
+        <span class="orbit-dot dot-bottom"></span>
+      </div>
+
+      <!-- Message -->
+      <h2 class="error-title text-white mb-3">عفواً! الصفحة غير موجودة</h2>
+      <p class="error-desc mx-auto mb-4">
+        الصفحة التي تبحث عنها غير موجودة أو تم نقلها. دعنا نعيدك إلى المسار الصحيح.
+      </p>
+
+      <!-- Buttons -->
+      <div
+        class="d-flex flex-column flex-sm-row justify-content-center align-items-center gap-3 mb-4"
+      >
+        <a
+          routerLink="/home"
+          class="btn btn-orange d-flex align-items-center justify-content-center gap-2 text-decoration-none rounded-pill px-3 py-2"
+        >
+          <span class="material-icons-outlined btn-icon"
+            ><mat-icon class="mat-18">home</mat-icon></span
+          >
+          <span>الذهاب للرئيسية</span>
+        </a>
+
+        <a
+          routerLink="/blog"
+          class="btn btn-outline-dark-custom d-flex align-items-center justify-content-center gap-2 text-decoration-none rounded-pill px-3 py-2"
+        >
+          <span class="material-icons-outlined btn-icon"
+            ><mat-icon class="mat-18">library_books</mat-icon></span
+          >
+          <span>تصفح المقالات</span>
+        </a>
+      </div>
+
+      <!-- Divider -->
+      <hr class="error-divider my-4" />
+
+      <!-- Sub Links -->
+      <p class="helpful-text mb-2">قد تجد هذه مفيدة:</p>
+      <div class="d-flex justify-content-center align-items-center gap-3">
+        <a routerLink="/blog" class="footer-link">المدونة</a>
+        <span class="text-white-50 opacity-25">•</span>
+        <a routerLink="/about" class="footer-link">من نحن</a>
+        <span class="text-white-50 opacity-25">•</span>
+        <a routerLink="/home" class="footer-link">الخصوصية</a>
+      </div>
+    </div>
+  </div>
+</section>
